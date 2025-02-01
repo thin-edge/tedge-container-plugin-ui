@@ -31,3 +31,46 @@ The tab will be enabled for all devices with a childAddition with serviceType=co
 The tab will be enabled for all devices with a childAddition with serviceType=container or serviceType=container-group. Lists all containers that are part of a project. The filter/search can be used to search for project names or container images.
 
 ![Container Container Management Screenshot](./docs/img/container-group-management.png)
+
+## Developers
+
+### Building the UI
+
+To build the ui use the following steps:
+
+1. Checkout the project
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. (Optional) Run the UI locally.
+
+   Add your tenant in the package.json file:
+
+   ```json
+    "scripts": {
+    "start": "c8ycli server -u https://{{add the url of your tenant here}} --shell devicemanagement",
+    ...
+    }
+   ```
+
+   Start the UI locally via:
+
+   ```sh
+   npm start
+   ```
+
+4. Build the Plugin
+
+   ```sh
+    npm run build
+   ```
+
+5. Deploy the Plugin
+
+   ```sh
+   npm run deploy
+   ```
