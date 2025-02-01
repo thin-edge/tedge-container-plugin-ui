@@ -1,0 +1,12 @@
+# build files
+dist/
+
+# nodejs
+node_modules/
+.angular/
+
+# MacOS
+.DS_Store
+
+# test files
+attic
