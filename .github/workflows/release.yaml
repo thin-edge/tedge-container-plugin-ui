@@ -32,4 +32,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          gh release create "${{ github.ref_name }}" --generate-notes --draft ||:
           gh release upload "${{ github.ref_name }}" dist/tedge-container-plugin-ui_*.zip
