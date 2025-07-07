@@ -36,7 +36,7 @@ export class ContainerService {
   }
 
   stop(container: Container) {
-    console.log(
+    console.error(
       'Stopping Container' +
         container.containerId +
         ', unfortunately it is not implemented yet'

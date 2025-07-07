@@ -17,10 +17,6 @@ export class ContainerGuard implements CanActivate {
           pageSize: 1,
         }
       )
-      .then(result => {
-        console.log('Verify container:', !!result?.data?.length);
-        // !!result?.data?.length
-        return !!result?.data?.length;
-      });
+      .then(result => !!result?.data?.length);
   }
 }

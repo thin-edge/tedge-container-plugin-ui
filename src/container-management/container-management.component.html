@@ -25,13 +25,12 @@
     <i
       c8y-icon="refresh"
       ng-class="{ 'icon-spin': isLoading }"
-      class="dlt-c8y-icon-refresh"
-      style=""></i>
+      class="dlt-c8y-icon-refresh"></i>
     Reload
   </button>
 </c8y-action-bar-item>
 
-<ng-container *ngIf="containers && containers.length > 0; else noData">
+<ng-container *ngIf="containers && containers.length > 0">
   <div class="card-group" [ngClass]="gridOrList">
     <!-- Add sticky header if needed later-->
 
@@ -130,9 +129,9 @@
               <label class="small ng-binding">Image: </label>
               <small>
                 <c8y-highlight
-                [text]="container.image"
-                [pattern]="searchText"></c8y-highlight>
-                </small>
+                  [text]="container.image"
+                  [pattern]="searchText"></c8y-highlight>
+              </small>
             </div>
           </div>
           <div
@@ -145,10 +144,9 @@
                 class="text-success dlt-c8y-icon-check-circle"></i>
               <i
                 *ngIf="container.status == 'down'"
-                class="text-danger dlt-c8y-icon-exclamation-circle"></i
-            >
-             {{container.state}}
-          </span>
+                class="text-danger dlt-c8y-icon-exclamation-circle"></i>
+              {{ container.state }}
+            </span>
           </div>
         </div>
       </div>
