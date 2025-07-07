@@ -4,19 +4,30 @@ import { ContainerService } from '../shared/container-service';
 import { Container } from '../shared/container';
 
 import { IResultList } from '@c8y/client';
+import { CoreModule, FormsModule } from '@c8y/ngx-components';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ContainerFilterPipe } from './container-filter.pipe';
 
 @Component({
   selector: 'container-management-tab',
   templateUrl: './container-management.component.html',
+  standalone: true,
   encapsulation: ViewEncapsulation.None,
+  imports: [CoreModule, FormsModule, BsDropdownModule, ContainerFilterPipe],
 })
 export class ContainerManagementComponent implements OnInit {
   containers: Container[];
+
   deviceId: string;
+
   gridOrList: 'interact-list' | 'interact-grid' = 'interact-grid';
+
   searchText: string = '';
+
   showContainerGroups: boolean = false;
+
   isLoading: boolean = true;
+
   constructor(
     private route: ActivatedRoute,
     private containerservice: ContainerService,
@@ -37,7 +48,7 @@ export class ContainerManagementComponent implements OnInit {
   }
 
   remove(serviceId: string) {
-    console.log('Removal of container not supported');
+    console.error('Removal of container not supported');
   }
 
   reload() {

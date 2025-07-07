@@ -3,6 +3,7 @@ import { Container, ContainerGroup } from 'src/shared/container';
 
 @Pipe({
   name: 'groupFilter',
+  standalone: true,
 })
 export class GroupFilterPipe implements PipeTransform {
   private filter(group: ContainerGroup, filterStr: string): boolean {

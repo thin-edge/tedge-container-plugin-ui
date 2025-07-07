@@ -6,11 +6,14 @@ import {
   ContainerGroup,
   ContainerParent,
 } from '../shared/container';
+import { CoreModule, FormsModule } from '@c8y/ngx-components';
 
 @Component({
   selector: 'container-info-tab',
   templateUrl: './container-info.component.html',
+  standalone: true,
   encapsulation: ViewEncapsulation.None,
+  imports: [CoreModule, FormsModule],
 })
 export class ContainerInfoComponent implements OnInit {
   serviceId: string;
@@ -28,6 +31,5 @@ export class ContainerInfoComponent implements OnInit {
   async loadData() {
     [this.container, this.parentDevice] =
       await this.containerService.getContainer(this.serviceId);
-    console.log(this.container);
   }
 }

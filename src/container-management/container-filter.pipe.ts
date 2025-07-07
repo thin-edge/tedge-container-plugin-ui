@@ -3,6 +3,7 @@ import { Container } from 'src/shared/container';
 
 @Pipe({
   name: 'containerFilter',
+  standalone: true,
 })
 export class ContainerFilterPipe implements PipeTransform {
   private filter(container: Container, filterStr: string): boolean {

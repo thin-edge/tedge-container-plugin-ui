@@ -19,9 +19,9 @@ export default {
       "base-uri 'none'; default-src 'self' 'unsafe-inline' http: https: ws: wss:; connect-src 'self' http: https: ws: wss:;  script-src 'self' *.bugherd.com *.twitter.com *.twimg.com *.aptrinsic.com 'unsafe-inline' 'unsafe-eval' data:; style-src * 'unsafe-inline' blob:; img-src * data: blob:; font-src * data:; frame-src *; worker-src 'self' blob:;",
     dynamicOptionsUrl: '/apps/public/public-options/options.json',
     remotes: {
-      'container-plugin': ['ContainerManagementModule'],
-      'Group-plugin': ['GroupManagementModule'],
-      'Container-Info-plugin': ['ContainerInfoModule'],
+      'container-plugin': ['containerManagementViewProviders'],
+      'Group-plugin': ['groupManagementViewProviders'],
+      'Container-Info-plugin': ['containerInfoViewProviders'],
     },
     tabsHorizontal: true,
     noAppSwitcher: false,
@@ -34,22 +34,22 @@ export default {
     exports: [
       {
         name: 'Container Info Tab',
-        module: 'ContainerInfoModule',
-        path: './src/container-info/container-info.module.ts',
+        module: 'containerInfoViewProviders',
+        path: './src/container-info/index.ts',
         description:
           'Adds a tab to a container service to display all relevant container information.',
       },
       {
         name: 'Container Management Tab',
-        module: 'ContainerManagementModule',
-        path: './src/container-management/container-management.module.ts',
+        module: 'containerManagementViewProviders',
+        path: './src/container-management/index.ts',
         description:
           'Adds a tab to a device to monitor the installed containers',
       },
       {
         name: 'Container Group Management Tab',
-        module: 'GroupManagementModule',
-        path: './src/group-management/group-management.module.ts',
+        module: 'groupManagementViewProviders',
+        path: './src/group-management/index.ts',
         description:
           'Adds a tab to the device to monitor container groups (aka. docker compose).',
       },
